@@ -1,0 +1,6 @@
+py3env
+db.sqlite3
+.DS_Store
+*.pyc
+staticfiles
+__pycache__

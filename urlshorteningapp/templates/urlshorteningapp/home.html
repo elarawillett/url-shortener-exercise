@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="{% static 'urlshorteningapp/style.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.16/browser.js"></script>
+  </head>
+  <body>
+    
+    <div id="content">
+        <h1>URL Shortener</h1>
+        <form method="POST">{% csrf_token %}
+            <p>The Full URL: </p>
+            <p>{{ form.fullUrl.errors }}</p>
+            <p>{{ form.fullUrl }}</p>
+            <p>The Shortened URL: </p>
+            <p>{{ form.urlKey.errors }}</p>
+            <p>{{ domain }}/{{ form.urlKey }}</p><br/>
+            <button type="submit">Submit!</button>
+        </form>
+    </div>
+ 
+    <script type="text/babel"></script>
+    
+  </body>
+</html>
